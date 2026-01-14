@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabi - Saved Tabs</title>
+  <link rel="stylesheet" href="tabs.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">tabi</h1>
+      </div>
+
+      <!-- Search -->
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          id="search-input"
+          placeholder="Search tabs..."
+          autofocus
+        >
+      </div>
+
+      <!-- Domain Filter -->
+      <nav class="domain-nav" id="domain-nav">
+        <div class="nav-item active" data-domain="all">
+          <span class="nav-icon">📑</span>
+          <span class="nav-label">All Tabs</span>
+          <span class="nav-count" id="all-count">0</span>
+        </div>
+        <!-- Domain items will be rendered here -->
+      </nav>
+
+      <!-- Labels Filter -->
+      <div class="sidebar-section">
+        <h3 class="section-title">Labels</h3>
+        <div class="labels-filter" id="labels-filter">
+          <!-- Label filters will be rendered here -->
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="sidebar-footer">
+        <button class="sidebar-btn" id="import-btn" title="Import">
+          <span>Import</span>
+        </button>
+        <button class="sidebar-btn" id="export-btn" title="Export">
+          <span>Export</span>
+        </button>
+        <button class="sidebar-btn" id="settings-btn" title="Settings">
+          <span>Settings</span>
+        </button>
+        <input type="file" id="import-file" accept=".json" hidden>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Header -->
+      <header class="main-header">
+        <div class="header-info">
+          <h2 class="page-title" id="page-title">All Tabs</h2>
+          <span class="tab-count" id="visible-count">0 tabs</span>
+        </div>
+        <div class="header-actions">
+          <select class="sort-select" id="sort-select">
+            <option value="date-desc">Newest First</option>
+            <option value="date-asc">Oldest First</option>
+            <option value="alpha-asc">A-Z</option>
+            <option value="alpha-desc">Z-A</option>
+          </select>
+          <button class="btn btn-primary" id="open-all-btn">Open All Visible</button>
+        </div>
+      </header>
+
+      <!-- Tabs Grid -->
+      <div class="tabs-container" id="tabs-container">
+        <!-- Empty state -->
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon">📑</div>
+          <h3>No saved tabs</h3>
+          <p>Save tabs using the Tabi extension icon in your toolbar</p>
+        </div>
+
+        <!-- Tabs will be rendered here -->
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="tabs.js"></script>
+</body>
+</html>

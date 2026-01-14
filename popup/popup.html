@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabi</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="logo">tabi</h1>
+      <nav class="nav-tabs">
+        <button class="nav-tab active" data-view="saved">Saved</button>
+        <button class="nav-tab" data-view="settings">Settings</button>
+        <button class="nav-tab expand-btn" id="expand-btn" title="Open full page view">&#x26F6;</button>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Saved View -->
+      <div class="view active" id="saved-view">
+        <!-- Save Form -->
+        <section class="save-form">
+          <div class="current-tab-preview">
+            <img class="favicon" src="" alt="" id="current-favicon">
+            <span class="tab-title" id="current-title">Loading...</span>
+          </div>
+          <textarea
+            class="description-input"
+            id="description-input"
+            placeholder="Add a description..."
+            rows="2"
+          ></textarea>
+          <div class="label-selector" id="label-selector">
+            <!-- Labels will be rendered here -->
+          </div>
+          <button class="save-btn" id="save-btn">Save Tab</button>
+        </section>
+
+        <!-- Search -->
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            placeholder="Search tabs..."
+          >
+        </div>
+
+        <!-- Tabs List -->
+        <div class="tabs-list" id="tabs-list">
+          <!-- Domain groups will be rendered here -->
+          <div class="empty-state" id="empty-state">
+            <p>No saved tabs yet</p>
+            <p class="empty-hint">Save your first tab using the form above!</p>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <button class="footer-btn" id="export-btn">Export</button>
+          <button class="footer-btn" id="import-btn">Import</button>
+          <input type="file" id="import-file" accept=".json" hidden>
+        </footer>
+      </div>
+
+      <!-- Settings View -->
+      <div class="view" id="settings-view">
+        <section class="settings-section">
+          <h2 class="settings-title">Storage</h2>
+          <div class="setting-item">
+            <label class="setting-label">
+              <span>Storage Mode</span>
+              <select id="storage-mode" class="setting-select">
+                <option value="local">Local (this device only)</option>
+                <option value="sync">Sync (across devices)</option>
+              </select>
+            </label>
+            <p class="setting-hint">Sync storage is limited to 100KB</p>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <h2 class="settings-title">Labels</h2>
+          <div class="custom-labels-list" id="custom-labels-list">
+            <!-- Custom labels will be rendered here -->
+          </div>
+          <div class="add-label-form">
+            <input
+              type="text"
+              class="add-label-input"
+              id="new-label-input"
+              placeholder="New label name..."
+            >
+            <input
+              type="color"
+              class="add-label-color"
+              id="new-label-color"
+              value="#6366F1"
+            >
+            <button class="add-label-btn" id="add-label-btn">Add</button>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <h2 class="settings-title">Data</h2>
+          <button class="danger-btn" id="clear-all-btn">Clear All Data</button>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

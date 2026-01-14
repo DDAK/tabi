@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Tabi - Tab Manager",
+  "version": "1.0.0",
+  "description": "Save and organize browser tabs with domain grouping, labels, and search",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Tabi - Save & Manage Tabs"
+  },
+
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+
+  "options_page": "options/options.html"
+}
