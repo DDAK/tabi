@@ -122,19 +122,24 @@ We've all been there: **dozens of tabs** open, browser slowing down, and that on
 
 ## Screenshots
 
-<details>
-<summary>📸 Click to view screenshots</summary>
-
 ### Popup View
 *Quick access from your toolbar*
+
+<p align="center">
+  <img src="./screenshots/extension1.png" alt="Tabi Popup View" width="400">
+</p>
 
 ### Full Page View
 *Expanded interface for managing large collections*
 
-### Options Page
-*Customize labels and storage settings*
+<p align="center">
+  <img src="./screenshots/manager.png" alt="Tabi Full Page View" width="700">
+</p>
 
-</details>
+### Extension in Action
+<p align="center">
+  <img src="./screenshots/extension2.png" alt="Tabi Extension" width="400">
+</p>
 
 ---
 
